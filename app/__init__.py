@@ -53,3 +53,19 @@ def view(employee_id):
         data = response.json()
         for emp_id in data:
             click.echo('{} : {}'.format(emp_id, data[emp_id]))
+
+
+@cli.command()
+@click.argument('employee_id')
+@click.option('--name', '-n', required=True)
+def update(employee_id, name):
+    """
+    Update the info of an employee
+    """
+    response = requests.get('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+    if not response.json():
+        click.echo("\nThe Employee you are trying to update dosen't exist, you may add new !!\n")
+    else:
+        response = requests.patch('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id),json={'name': '{}'.format(name)})
+        click.echo('The information is updated !!')
+        click.echo(response.json())
