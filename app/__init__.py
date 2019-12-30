@@ -69,3 +69,12 @@ def update(employee_id, name):
         response = requests.patch('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id),json={'name': '{}'.format(name)})
         click.echo('The information is updated !!')
         click.echo(response.json())
+
+@cli.command()
+@click.argument('employee_id')
+def delete(employee_id):
+    """
+    Delete contact
+    """
+    requests.delete('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+    click.echo('\nEmployee deleted!\n')
