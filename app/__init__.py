@@ -76,5 +76,9 @@ def delete(employee_id):
     """
     Delete contact
     """
-    requests.delete('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
-    click.echo('\nEmployee deleted!\n')
+    response = requests.get('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+    if not response.json():
+        click.echo("\nThe Employee you are trying to delete dosen't exist !!\n")
+    else:
+        requests.delete('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+        click.echo('\nEmployee deleted!\n')
