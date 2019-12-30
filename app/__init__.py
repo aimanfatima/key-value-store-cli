@@ -20,3 +20,18 @@ def add(employee_id, name):
     response = requests.put( '{}/Employee/{}.json'.format(os.getenv('URL'), employee_id),json={'name': '{}'.format(name)} )
     click.echo('Employee {} added!'.format(employee_id))
     click.echo(response.json())
+
+@cli.command()
+def list_all():
+    """
+    Views the list of all the Employees
+    """
+    response = requests.get('{}/Employee.json'.format(os.getenv('URL')))
+    click.echo('\nHere\'s a list of all the present Employees : \n\n')
+    data = response.json()
+    click.echo('\nEmployee id:            Name:\n\n')
+    for emp_id in data:
+        name = data[emp_id]['name']
+        click.echo('{}                      {}'.format(emp_id, name))
+    click.echo('\n\n')
+
