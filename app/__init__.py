@@ -16,10 +16,15 @@ def cli(ctx):
 def add(employee_id, name):
     """
     Add a new Employee
+
     """
-    response = requests.put( '{}/Employee/{}.json'.format(os.getenv('URL'), employee_id),json={'name': '{}'.format(name)} )
-    click.echo('Employee {} added!'.format(employee_id))
-    click.echo(response.json())
+    response = requests.get('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+    if response.json():
+        click.echo("\nThe Employee ID is already assigned to someone, use another ID \n")
+    else:
+        response = requests.put( '{}/Employee/{}.json'.format(os.getenv('URL'), employee_id),json={'name': '{}'.format(name)} )
+        click.echo('Employee {} added!'.format(employee_id))
+        click.echo(response.json())
 
 @cli.command()
 def list_all():
@@ -35,3 +40,16 @@ def list_all():
         click.echo('{}                      {}'.format(emp_id, name))
     click.echo('\n\n')
 
+@cli.command()
+@click.argument('employee_id')
+def view(employee_id):
+    """
+    View single Employee with a particular ID
+    """
+    response = requests.get('{}/Employee/{}.json'.format(os.getenv('URL'), employee_id))
+    if not response.json():
+        click.echo("\nThe Employee you are searching dosen't exist !!\n")
+    else:
+        data = response.json()
+        for emp_id in data:
+            click.echo('{} : {}'.format(emp_id, data[emp_id]))
