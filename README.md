@@ -72,13 +72,12 @@ System requirements - The system must have python (3.4 or later) installled in i
   <li>run virtualenv env</li>
   <li>run env\Scripts\activate</li>
   <li>Now add the path to the database to your system variables</li>
-  </br>
-    **Variable Name : URL**
-  </br>
-     **Variable Value/Path : https://key-value-store-cli.firebaseio.com/**
-    </br>
-  <li>run pip install --editable .</li>
-  <li>run the command employee --help</li>  
+        <ul>
+          <li><b>Variable Name : URL</b></li>
+          <li><b> Variable Value/Path : https://key-value-store-cli.firebaseio.com/</b></li>
+        </ul>
+  <li>   7. run pip install --editable .</li>
+  <li>   8. run the command employee --help</li>  
 </ol>
 
 Now try to execute all the above commands mentioned!! :)
