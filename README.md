@@ -1,3 +1,5 @@
+<h1>Introduction</h1>
+
 This is a Command Line Interface (CLI) App built using python to implement Key-Value Store. 
 For illustrating the concept, the key-value pair considered is- 
 </br>
@@ -18,6 +20,8 @@ Now, Firebase provides a REST API for the database. Hence, this API is used to d
 All the commands start with - employee
 
 ![alt text](https://github.com/aimanfatima/key-value-store-cli/blob/master/media/employee-command.png)
+
+<h1>Working and illustrations</h1>
 
 <h2>Command - 1 (to list all the commands)</h2>
 
@@ -58,3 +62,23 @@ If the user tries to update an existing id, it does that very smoothly, however,
 employee delete (employee_id)
 
 ![alt text](https://github.com/aimanfatima/key-value-store-cli/blob/master/media/employee-delete.png)
+
+<h1>Steps to deploy the CLI at locally (in Windows)</h1>
+System requirements - The system must have python (3.4 or later) installled in it 
+<ol>
+  <li>Download the repository, and unzip it</li>
+  <li>Open the PowerShell at the root directory, (the directory containg the file 'setup.py')</li>
+  <li>run pip install virtualenv</li>
+  <li>run virtualenv env</li>
+  <li>run env\Scripts\activate</li>
+  <li>Now add the path to the database to your system variables</li>
+  </br>
+    **Variable Name : URL**
+  </br>
+     **Variable Value/Path : https://key-value-store-cli.firebaseio.com/**
+    </br>
+  <li>run pip install --editable .</li>
+  <li>run the command employee --help</li>  
+</ol>
+
+Now try to execute all the above commands mentioned!! :)
