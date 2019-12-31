@@ -76,8 +76,8 @@ System requirements - The system must have python (3.4 or later) installled in i
           <li><b>Variable Name : URL</b></li>
           <li><b> Variable Value/Path : https://key-value-store-cli.firebaseio.com/</b></li>
         </ul>
-  <li>   7. run pip install --editable .</li>
-  <li>   8. run the command employee --help</li>  
+  <li>   run pip install --editable .</li>
+  <li>   run the command employee --help</li>  
 </ol>
 
 Now try to execute all the above commands mentioned!! :)
