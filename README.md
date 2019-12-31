@@ -68,16 +68,16 @@ System requirements - The system must have python (3.4 or later) installled in i
 <ol>
   <li>Download the repository, and unzip it</li>
   <li>Open the PowerShell at the root directory, (the directory containg the file 'setup.py')</li>
-  <li>run pip install virtualenv</li>
-  <li>run virtualenv env</li>
-  <li>run env\Scripts\activate</li>
+  <li>run ***pip install virtualenv*** </li>
+  <li>run ***virtualenv env***</li>
+  <li>run ***env\Scripts\activate***</li>
   <li>Now add the path to the database to your system variables</li>
         <ul>
           <li><b>Variable Name : URL</b></li>
           <li><b> Variable Value/Path : https://key-value-store-cli.firebaseio.com/</b></li>
         </ul>
-  <li>   run pip install --editable .</li>
-  <li>   run the command employee --help</li>  
+  <li>   run ***pip install --editable .***</li>
+  <li>   run the command ***employee --help***</li>  
 </ol>
 
-Now try to execute all the above commands mentioned!! :)
+Now try to execute all the above commands mentioned!! :alien: :+1:
